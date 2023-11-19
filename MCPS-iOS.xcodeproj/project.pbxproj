@@ -11,6 +11,8 @@
 		D67EFCEF2B0A0CED00157F84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67EFCEE2B0A0CED00157F84 /* ContentView.swift */; };
 		D67EFCF12B0A0CEE00157F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67EFCF02B0A0CEE00157F84 /* Assets.xcassets */; };
 		D67EFCF42B0A0CEE00157F84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D67EFCF32B0A0CEE00157F84 /* Preview Assets.xcassets */; };
+		D67EFCFB2B0A0D0900157F84 /* M5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67EFCFA2B0A0D0900157F84 /* M5ViewController.swift */; };
+		D67EFCFD2B0A0D3B00157F84 /* debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67EFCFC2B0A0D3B00157F84 /* debug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		D67EFCEE2B0A0CED00157F84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D67EFCF02B0A0CEE00157F84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D67EFCF32B0A0CEE00157F84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D67EFCFA2B0A0D0900157F84 /* M5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M5ViewController.swift; sourceTree = "<group>"; };
+		D67EFCFC2B0A0D3B00157F84 /* debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 		D67EFCEB2B0A0CED00157F84 /* MCPS-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D67EFCFC2B0A0D3B00157F84 /* debug.swift */,
+				D67EFCFA2B0A0D0900157F84 /* M5ViewController.swift */,
 				D67EFCEC2B0A0CED00157F84 /* MCPS_iOSApp.swift */,
 				D67EFCEE2B0A0CED00157F84 /* ContentView.swift */,
 				D67EFCF02B0A0CEE00157F84 /* Assets.xcassets */,
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67EFCFB2B0A0D0900157F84 /* M5ViewController.swift in Sources */,
+				D67EFCFD2B0A0D3B00157F84 /* debug.swift in Sources */,
 				D67EFCEF2B0A0CED00157F84 /* ContentView.swift in Sources */,
 				D67EFCED2B0A0CED00157F84 /* MCPS_iOSApp.swift in Sources */,
 			);
@@ -275,6 +283,7 @@
 				DEVELOPMENT_TEAM = H2BRC2349A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "to connect M5";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +313,7 @@
 				DEVELOPMENT_TEAM = H2BRC2349A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "to connect M5";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
