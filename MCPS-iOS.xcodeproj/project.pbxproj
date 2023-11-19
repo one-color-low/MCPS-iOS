@@ -23,6 +23,7 @@
 		D67EFCF32B0A0CEE00157F84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D67EFCFA2B0A0D0900157F84 /* M5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M5ViewController.swift; sourceTree = "<group>"; };
 		D67EFCFC2B0A0D3B00157F84 /* debug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = debug.swift; sourceTree = "<group>"; };
+		D67EFCFE2B0A0F2200157F84 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +40,7 @@
 		D67EFCE02B0A0CED00157F84 = {
 			isa = PBXGroup;
 			children = (
+				D67EFCFE2B0A0F2200157F84 /* README.md */,
 				D67EFCEB2B0A0CED00157F84 /* MCPS-iOS */,
 				D67EFCEA2B0A0CED00157F84 /* Products */,
 			);
