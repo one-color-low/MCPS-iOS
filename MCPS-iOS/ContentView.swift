@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    let m5 = M5ViewController()
+    
+    @ObservedObject private var m5 = M5ViewController()
     init() {
         m5.initializeCBCentralManager()
         print("initialized")
     }
     var body: some View {
         VStack {
-            Text("Change M5Stack Color")
+            
+            Text("Send command to M5Stack.")
                 .padding()
+            
             Button(action:{
                 _ = m5.sendString(sendText: "RED")
                 print("Red Button tapped")
@@ -25,8 +28,9 @@ struct ContentView: View {
             }
             .padding()
             .accentColor(Color.white)
-            .background(Color.black)
+            .background(Color.red)
             .cornerRadius(26)
+            
             Button(action:{
                 _ = m5.sendString(sendText: "BLUE")
                 print("Blue Button tapped")
@@ -35,8 +39,33 @@ struct ContentView: View {
             }
             .padding()
             .accentColor(Color.white)
+            .background(Color.blue)
+            .cornerRadius(26)
+            
+            Button(action:{
+                _ = m5.sendString(sendText: "INRANGE")
+                print("In Range Button tapped")
+            }){
+                Text("In Range")
+            }
+            .padding()
+            .accentColor(Color.white)
             .background(Color.black)
             .cornerRadius(26)
+            
+            Button(action:{
+                _ = m5.sendString(sendText: "OUTRANGE")
+                print("Out Range Button tapped")
+            }){
+                Text("Out Range")
+            }
+            .padding()
+            .accentColor(Color.white)
+            .background(Color.black)
+            .cornerRadius(26)
+            
+            Text("RSSI: "+m5.rssiStr)
+                .padding()
         }
         .padding()
     }

@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 import CoreBluetooth
 
-class M5ViewController: UIViewController , CBCentralManagerDelegate , CBPeripheralDelegate {
+class M5ViewController: UIViewController , CBCentralManagerDelegate , CBPeripheralDelegate, ObservableObject {
+    
+    @Published var rssiStr: String = ""
     
     /// 接続先ローカルネーム
     private let connectToLocalName:String = "M5Stack-Color"
@@ -84,6 +86,9 @@ class M5ViewController: UIViewController , CBCentralManagerDelegate , CBPeripher
                 connectPeripheral()
             }
         }
+        let rssiValue = RSSI.intValue
+        rssiStr = String(rssiValue)
+        print("RSSI: \(rssiValue)")
     }
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
