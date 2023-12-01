@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
+
+class CheckInLog: Object{
+    @Persisted(primaryKey: true) var id = UUID().uuidString
+    @Persisted var eventTime: Date = Date()
+}

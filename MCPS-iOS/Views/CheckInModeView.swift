@@ -16,60 +16,77 @@ struct CheckInModeView: View {
         print("initialized")
     }
     
+    @ObservedObject var viewModel = CheckInLogViewModel()
+    
     var body: some View {
         VStack {
+            Spacer()
+            Text("Check-In モード")
+                .bold()
+            Spacer()
             
-            Text("Send command to M5Stack.")
-                .padding()
-            
-            Button(action:{
-                _ = m5.sendString(sendText: "RED")
-                print("Red Button tapped")
-            }){
-                Text("Red")
+            HStack{
+                Text("User ID: \nxxx")
+                    .multilineTextAlignment(.center)
+                Button(action: {
+                    print("button tapped.")
+                }){
+                    Text("変更する")
+                }
+                .buttonStyle(BlueRoundButtonStyle())
             }
-            .padding()
-            .accentColor(Color.white)
-            .background(Color.red)
-            .cornerRadius(26)
             
-            Button(action:{
-                _ = m5.sendString(sendText: "BLUE")
-                print("Blue Button tapped")
-            }){
-                Text("BLUE")
+            List {
+                Section(header: Text("Check-In履歴")) {
+                    HStack {
+                        Text("ID").bold()
+                            .padding(10)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("").bold()
+                            .padding(10)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    ForEach(viewModel.checkInLogs, id: \.id) { checkInLog in
+                        HStack {
+                            Text(checkInLog.id)
+                                .padding(10)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text(checkInLog.eventTime.description)
+                                .padding(10)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    }
+                }
+                
             }
-            .padding()
-            .accentColor(Color.white)
-            .background(Color.blue)
-            .cornerRadius(26)
             
-            Button(action:{
-                _ = m5.sendString(sendText: "INRANGE")
-                print("In Range Button tapped")
+            Text("ポイントxxxxの近くにいます")
+            Text("RSSI: -80dBm")
+            
+            Spacer()
+            
+            Button(action: {
+                print("button tapped.")
             }){
-                Text("In Range")
+                Text("Check-In")
             }
-            .padding()
-            .accentColor(Color.white)
-            .background(Color.black)
-            .cornerRadius(26)
-            
-            Button(action:{
-                _ = m5.sendString(sendText: "OUTRANGE")
-                print("Out Range Button tapped")
-            }){
-                Text("Out Range")
-            }
-            .padding()
-            .accentColor(Color.white)
-            .background(Color.black)
-            .cornerRadius(26)
-            
-            Text("RSSI: "+m5.rssiStr)
-                .padding()
+            .buttonStyle(BlueRoundButtonStyle())
         }
-        .padding()
+
+    }
+    
+}
+
+class CheckInLogViewModel: ObservableObject {
+    
+    @Published var checkInLogs: [CheckInLog]
+    
+    init() {
+        checkInLogs = []
+        let log1 = CheckInLog()
+        let log2 = CheckInLog()
+        checkInLogs.append(log1)
+        checkInLogs.append(log2)
     }
     
 }
