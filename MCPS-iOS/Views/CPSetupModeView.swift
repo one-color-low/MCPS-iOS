@@ -13,6 +13,12 @@ struct CPSetupModeView: View {
     
     @ObservedObject var viewModel = CPSetupLogViewModel()
     
+    @ObservedObject private var m5 = M5ViewController()
+    init() {
+        m5.initializeCBCentralManager()
+        print("initialized")
+    }
+    
     var body: some View {
         VStack {
             Spacer()
@@ -72,8 +78,10 @@ struct CPSetupModeView: View {
                                 Button(action: {
                                     print(viewModel.setupLogs)
                                     print("button tapped.")
-                                    setupLog.isSet = true
+//                                    setupLog.isSet = true
                                     print(viewModel.setupLogs)
+                                    let jsonText = "{type: 'SETUP', typeNo: '1.0', latitude: '1.1111', longitude: '2.2222', altitude: '3.3333'}"
+                                    _ = m5.sendString(sendText: jsonText)
                                 }){
                                     Text("設置する")
                                 }

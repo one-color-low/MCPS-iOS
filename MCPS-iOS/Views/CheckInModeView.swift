@@ -61,12 +61,13 @@ struct CheckInModeView: View {
             }
             
             Text("ポイントxxxxの近くにいます")
-            Text("RSSI: -80dBm")
+            Text("RSSI: "+m5.rssiStr)
             
             Spacer()
             
             Button(action: {
                 print("button tapped.")
+                _ = m5.sendString(sendText: "{uid: '37'}")
             }){
                 Text("Check-In")
             }
